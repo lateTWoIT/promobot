@@ -10,7 +10,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     env:
-      DEVICT_SLACK_WEBHOOK: ${{ secrets.DEVICT_SLACK_WEBHOOK }}
+      DEVICT_SLACK_WEBHOOK: ${{ secrets.OZSEC_SLACK_WEBHOOK }}
       DEVICT_TW_API_KEY: ${{ secrets.DEVICT_TW_API_KEY }}
       DEVICT_TW_API_SECRET_KEY: ${{ secrets.DEVICT_TW_API_SECRET_KEY }}
       DEVICT_TW_ACCESS_TOKEN: ${{ secrets.DEVICT_TW_ACCESS_TOKEN }}
