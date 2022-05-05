@@ -22,6 +22,7 @@ type config struct {
 	DevICTMeetupURL string `envconfig:"DEVICT_MEETUP_URL" required:"true"`
 	OzSecMeetupURL  string `envconfig:"OZSEC_MEETUP_URL" required:"true"`
 	WTFMeetupURL    string `envconfig:"WTF_MEETUP_URL" required:"true"`
+	Isc2URL			string `envconfig:"ISC2_Web_URL" required:"true"`
 }
 
 type DevICTTwitterConfig struct {
@@ -44,6 +45,7 @@ func main() {
 			sources.Source(sources.NewMeetupSource("devICT", c.DevICTMeetupURL)),
 			sources.Source(sources.NewMeetupSource("OzSec", c.OzSecMeetupURL)),
 			sources.Source(sources.NewMeetupSource("Wichita Technology Forum", c.WTFMeetupURL)),
+			sources.Source(sources.NewWebSource("ISC2Wichita", c.Isc2URL)),
 		},
 		Channels: []channels.Channel{
 			channels.Channel(channels.NewSlackChannel("devICT", c.DevICTSlackWebhook)),
