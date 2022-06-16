@@ -56,23 +56,23 @@ func (c *WebSource) Retrieve(loc *time.Location) ([]Event, error) {
 	return events, nil
 }
 
-func haveNextInSeries(events []Event, eventName string) bool {
-	for _, e := range events {
-		if e.Name == eventName {
-			return true
-		}
-	}
-	return false
-}
+// func haveNextInSeries(events []Event, eventName string) bool {
+//	for _, e := range events {
+//		if e.Name == eventName {
+//			return true
+//		}
+//	}
+//	return false
+//}
 
 type WebResponse struct {
 	Results []WebEvent `json:"results"`
 }
 
 type WebEvent struct {
-	Name  string      `json:"name"`
-	Time  int64       `json:"time"`
-	URL   string      `json:"event_url"`
+	Name  string   `json:"name"`
+	Time  int64    `json:"time"`
+	URL   string   `json:"event_url"`
 	Venue WebVenue `json:"venue"`
 }
 
